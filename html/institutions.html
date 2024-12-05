@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Institutions</title>
+  <link rel="stylesheet" href="css/institutions.css" />
+</head>
+<body>
+  <nav class="top-nav">
+    <button onclick="location.href='index.html'">Home</button>
+    <button onclick="location.href='about.html'">About Us</button>
+    <button onclick="location.href='announcement.html'">Announcement</button>
+    <button onclick="location.href='login.html'">Login/Register</button>
+  </nav>
+  <!-- Header Section -->
+  <header class="head">
+    <div class="header-container">
+      <div class="logos">
+        <img src="images/rrdic.png" alt="RRDIC Logo" />
+        <img src="images/dost.png" alt="DOST Logo" />
+        <img src="path/to/SEARCH_logo.png" alt="SEARCH Logo" />
+      </div>
+      <div class="header-content">
+        <h2>REGIONAL RESEARCH, DEVELOPMENT AND INNOVATION COMMITTEE</h2>
+        <h1>Department of Science and Technology</h1>
+        <h3>Cordillera Administrative Region</h3>
+      </div>
+      <div class="search-bar">
+        <form id="searchForm" method="get">
+          <input type="text" id="searchInput" placeholder="Search Institutions..." name="search" onkeyup="searchInstitutions()" />
+          <button type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </header>
+  <nav class="main-buttons">
+    <button onclick="location.href='RD_projects.html'">Research and Development Projects</button>
+    <button onclick="location.href='reseachers.html'">Researchers</button>
+    <button onclick="location.href='institutions.html'">Institutions</button>
+    <button onclick="location.href='RnD_facilities.html'">R&D Facilities</button>
+    <button onclick="location.href='patents_projects.html'">IP Rights and Patents</button>
+  </nav>
+
+  <!-- Institutions List Section -->
+  <section id="institutions-list">
+    <h3>List of Institutions</h3>
+    <ul id="institutions">
+      <li class="institution-item">Institution 1: University of Science and Technology</li>
+      <li class="institution-item">Institution 2: Institute for Environmental Studies</li>
+      <li class="institution-item">Institution 3: Center for Advanced Research</li>
+      <li class="institution-item">Institution 4: National Institute of Innovation</li>
+      <li class="institution-item">Institution 5: Engineering and Tech Research Center</li>
+      <!-- Add more institution items here -->
+    </ul>
+  </section>
+
+  <!-- JavaScript -->
+  <script src="js/script.js"></script>
+  <script>
+    function searchInstitutions() {
+      var input = document.getElementById('searchInput').value.toLowerCase();
+      var institutions = document.querySelectorAll('.institution-item');
+      institutions.forEach(function(institution) {
+        var text = institution.textContent.toLowerCase();
+        if (text.includes(input)) {
+          institution.style.display = 'list-item';
+        } else {
+          institution.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
